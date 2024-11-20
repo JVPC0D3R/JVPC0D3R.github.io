@@ -449,3 +449,53 @@ nav a:hover {
   transform: scale(1.02);
   animation: glowing 10s infinite;
 }
+
+
+.publication {
+  font: 18px/1.4 "Poppins", sans-serif;
+  color: #cccccc;
+  border: 2px solid #666666;
+  border-radius: 10px;
+  background-color: #2b2b2b;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.publication .title {
+  font-weight: bold;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.publication .journal {
+  font-style: italic;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.publication .year {
+  font-size: 18px;
+  color: #999999;
+  margin-bottom: 15px;
+}
+
+.publication .authors {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.publication .authors li {
+  margin-bottom: 5px;
+}
+
+.publication .authors li:not(:last-child)::after {
+  content: ", ";
+}
+
+.publication:hover {
+  transform: scale(1.02);
+  animation: glowing 10s infinite;
+}
