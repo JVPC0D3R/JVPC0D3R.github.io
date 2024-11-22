@@ -30,10 +30,11 @@ body {
 }
 
 .container {
+  width: 90%;
   margin: 0 auto;
-  max-width: 740px;
-  padding: 0 10px;
-  width: 100%;
+  max-width: none;
+  padding: 0 15px;
+  box-sizing: border-box;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -495,7 +496,27 @@ nav a:hover {
   content: ", ";
 }
 
-.publication:hover {
+a[href] .publication:hover {
   transform: scale(1.02);
   animation: glowing 10s infinite;
+}
+
+.publication {
+  cursor: default;
+}
+
+a[href] .publication {
+  cursor: pointer;
+}
+
+.glow-link {
+  color: #999999;
+  text-decoration: none;
+  font-weight: bold;
+  text-decoration: underline;
+  
+  &:hover {
+    transform: scale(1.02);
+    animation: glowing 10s infinite;
+  }
 }
