@@ -398,6 +398,12 @@ nav a:hover {
   background-color: #2b2b2b;
   padding: 20px;
   margin-bottom: 30px;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    background-color 0.3s ease;
 }
 
 .publication .title {
@@ -414,7 +420,6 @@ nav a:hover {
 
 .publication .year {
   font-size: 18px;
-  color: #999999;
   margin-bottom: 15px;
 }
 
@@ -437,7 +442,12 @@ nav a:hover {
 
 a[href] .publication:hover {
   transform: scale(1.02);
-  animation: glowing 10s infinite;
+  color: #bff3d6;
+  border: 2px solid #bff3d6;
+  background-color: #505050;
+  animation-name: glowing, glowing_block;
+  animation-duration: 10s, 1.5s;
+  animation-iteration-count: infinite, infinite;
 }
 
 .publication {
