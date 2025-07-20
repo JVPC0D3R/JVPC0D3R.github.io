@@ -490,3 +490,36 @@ a[href] .publication {
   text-align: justify;
   margin: 0 0 20px 0;
 }
+
+.error-404 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    display: block;
+    width: 20%;
+
+    mask-image: 
+      linear-gradient(to bottom, black 0%, transparent 100%);
+    mask-mode: match-source;
+    mask-composite: intersect;
+
+    -webkit-mask-image: 
+      linear-gradient(to bottom, black 0%, transparent 100%);
+    -webkit-mask-composite: destination-in;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-80%, 155%);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    pointer-events: none;
+    animation: glowing 1.5s infinite;
+  }
+}
