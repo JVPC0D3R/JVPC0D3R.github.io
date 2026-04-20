@@ -1,6 +1,9 @@
 {% if site.social_links.github %}
   <a href="{{ site.social_links.github }}" target="_blank"><i class="fab fa-github"></i></a>
 {% endif %}
+{% if site.social_links.linkedin %}
+  <a href="{{ site.social_links.linkedin }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+{% endif %}
 {% if site.social_links.orcid %}
   <a href="{{ site.social_links.orcid }}" target="_blank"><i class="fab fa-orcid"></i></a>
 {% endif %}
@@ -12,4 +15,9 @@
 {% endif %}
 {% if site.social_links.openpowerlifting %}
   <a href="{{ site.social_links.openpowerlifting }}" target="_blank"><i class="fas fa-dumbbell"></i></a>
+{% endif %}
+{% if site.social_links.huggingface %}
+  <a href="{{ site.social_links.huggingface }}" target="_blank" rel="noopener noreferrer" aria-label="Hugging Face">
+    <span class="social-emoji" aria-hidden="true">🤗</span>
+  </a>
 {% endif %}

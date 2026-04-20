@@ -1,35 +1,21 @@
 ---
 layout: default
+title: Publications
 ---
 
-<body>
-  <a href="https://ieeexplore.ieee.org/document/10797373" target="_blank" style="text-decoration: none; color: inherit;">
-        <div class="publication" style="cursor: pointer;">
-            <div class="title">Pedestrian Action Classification from a Vehicle's Perspective</div>
-            <div class="journal">Robot 2024 - 7th Iberian Robotics Conference - IEEE Xplore</div>
-            <div class="year">2024 (Madrid)</div>
-            <ul class="authors">
-              <li>J. Villa</li>
-              <li>A. de la Escalera</li>
-              <li>J. M. Armingol</li>
-            </ul>
-        </div>
-  </a>
-
-    <a href="https://onlinelibrary.wiley.com/doi/10.1155/2024/3679014" target="_blank" style="text-decoration: none; color: inherit;">
-        <div class="publication" style="cursor: pointer;">
-            <div class="title">Intelligent Infrastructure for Traffic Monitoring Based on Deep Learning and Edge Computing</div>
-            <div class="journal">Journal of Advanced Transportation (Wiley)</div>
-            <div class="year">2024</div>
-            <ul class="authors">
-              <li>J. Villa</li>
-              <li>F. García</li>
-              <li>R. Jover</li>
-              <li>V. Martínez</li>
-              <li>J. M. Armingol</li>
-            </ul>
-        </div>
+<section class="publications-list" aria-label="Publications">
+  {% for publication in site.data.publications %}
+    <a href="{{ publication.url }}" target="_blank" rel="noopener noreferrer" class="publication-link">
+      <article class="publication">
+        <div class="title">{{ publication.title }}</div>
+        <div class="journal">{{ publication.journal }}</div>
+        <div class="year">{{ publication.year }}</div>
+        <ul class="authors">
+          {% for author in publication.authors %}
+            <li>{{ author }}</li>
+          {% endfor %}
+        </ul>
+      </article>
     </a>
-    
-  
-</body>
+  {% endfor %}
+</section>

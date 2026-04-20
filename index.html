@@ -3,21 +3,56 @@ layout: default
 title: About Me
 ---
 
-<body>
-
-    <h1 style="text-align: center; margin-top: 20px;">ABOUT ME</h1>
-    <div class="content-wrapper">
-        <img src="../images/sf_jvp.jpeg" alt="Avatar" class="avatar-image" />
-        <p class="text-section">
-            Hi! I'm Jaime Villa, an Electronic Engineer and Researcher in Deep Learning and Computer Vision.
-        </p>
-        <p class="text-section">
-            I’m pursuing a PhD at Universidad Carlos III de Madrid and work as a Researcher in the <a href="https://lsi.uc3m.es/" target="_blank" class="glow-link">Intelligent Systems Lab (LSI)</a>. My research applies Deep Learning and Computer Vision to Autonomous Vehicles and Infrastructure Traffic Supervision systems. I also have Industry experience in PLC automation and robotics, where I’ve implemented solutions to streamline processes and improve system performance.
-        </p>
-        <p class="text-section">
-            Alongside my technical work, sports have played a significant role in my life. I played rugby, which helped me develop teamwork, discipline, and commitment. In 2021, I co-founded a powerlifting club and <a href="https://www.openpowerlifting.org/u/jaimevillaplaza" target="_blank" class="glow-link">competed as an active member</a>. Through powerlifting, I learned self‑reliance, resilience, and that consistent effort leads to results.
-        </p>
-            
+<section aria-label="About">
+  <div class="about-layout">
+    <img src="{{ site.baseurl }}/images/sf_jvp.jpeg" alt="Portrait of Jaime Villa" class="about-image" />
+    <div class="about-text">
+      <p>
+        I am Jaime Villa, an electronics engineer and PhD student at Universidad Carlos III de Madrid, where I conduct research on deep learning for autonomous driving at the <a href="https://lsi.uc3m.es/" target="_blank" rel="noopener noreferrer" class="glow-link">Intelligent Systems Lab (LSI)</a>.
+      </p>
     </div>
-</body>
+  </div>
+</section>
 
+{% assign publication_news = site.data.publications %}
+{% assign all_news = publication_news | sort: "news_rank" | reverse %}
+{% assign latest_news = all_news | slice: 0, 1 %}
+<section class="home-news" aria-label="Latest News">
+  <div class="home-news-header">
+    <h2 class="home-news-title">Latest News</h2>
+  </div>
+  <div class="home-news-list">
+    {% for item in latest_news %}
+      <article class="home-news-item">
+        <div class="home-news-meta">
+          <span class="home-news-badge">{{ item.news_type | default: "Update" }}</span>
+          {% if item.year %}
+            <span class="home-news-date">{{ item.year }}</span>
+          {% endif %}
+        </div>
+        <p class="home-news-summary">
+          {{ item.title }}{% if item.news_excerpt %} — {{ item.news_excerpt }}{% endif %}
+        </p>
+        <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer" class="home-news-link home-news-action">
+          {% if item.news_type == "Project" %}
+            See project
+          {% elsif item.news_type == "Publication" %}
+            Read publication
+          {% else %}
+            Read update
+          {% endif %}
+        </a>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="contact-section" aria-label="Contact">
+  <div class="contact-card">
+    <h2 class="contact-title">Contact</h2>
+    <p class="contact-text">
+      Feel free to contact me at
+      <a href="mailto:javillap@pa.uc3m.es" class="glow-link">javillap@pa.uc3m.es</a>.
+    </p>
+  </div>
+</section>
