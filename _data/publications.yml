@@ -1,3 +1,22 @@
+- title: "RetroMotion: Retrocausal Motion Forecasting Models are Instructable"
+  journal: "arXiv preprint (cs.CV)"
+  year: "2026"
+  url: "https://arxiv.org/abs/2505.20414"
+  news_type: "Publication"
+  news_rank: 300
+  news_excerpt: "arXiv preprint (cs.CV)"
+  authors:
+    - "R. Wagner"
+    - "O. S. Tas"
+    - "F. Hauser"
+    - "M. Steiner"
+    - "D. Strutz"
+    - "A. Vivekanandan"
+    - "J. Villa"
+    - "Y. Shen"
+    - "C. Fernandez"
+    - "C. Stiller"
+
 - title: "LongTail Driving Scenarios with Reasoning Traces: The KITScenes LongTail Dataset"
   journal: "arXiv preprint (cs.CV)"
   year: "2026"
